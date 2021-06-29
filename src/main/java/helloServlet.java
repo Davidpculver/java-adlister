@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name = "HelloServlet", urlPatterns = "/hello")
+public class helloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
