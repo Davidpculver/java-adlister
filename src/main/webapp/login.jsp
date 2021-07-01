@@ -34,12 +34,12 @@ if (request.getMethod().equalsIgnoreCase("post")){
 <head>
     <title>Login</title>
 
-    <%@include file="partials/head.jsp"%>
+    <%@include file="WEB-INF/partials/head.jsp"%>
 
 </head>
 
 <header>
-    <%@include file="partials/navbar.jsp"%>
+    <%@include file="WEB-INF/partials/navbar.jsp"%>
 </header>
 
 <body class="m-5">
