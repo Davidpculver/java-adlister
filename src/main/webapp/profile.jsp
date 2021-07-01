@@ -2,10 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%= "some title" %>
-    </title>
+    <title>Login</title>
+    <%@include file="partials/head.jsp"%>
 </head>
-<body>
 
+<header>
+    <%@include file="partials/navbar.jsp"%>
+</header>
+<body>
+<h1>My profile</h1>
 </body>
 </html>
