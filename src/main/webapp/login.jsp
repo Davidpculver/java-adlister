@@ -14,10 +14,28 @@
     }
 %>
 
+<%--INSTRUCTOR EXAMPLE--%>
+<%
+if (request.getMethod().equalsIgnoreCase("post")){
+    String username = request.getParameter("username");
+    String password = request.getParameter("password");
+    if(username.equals("admin") && password.equals("password")){
+        response.sendRedirect("/profile.jsp");
+    }
+
+}
+%>
+
+
+
+
+
 <html>
 <head>
     <title>Login</title>
+
     <%@include file="partials/head.jsp"%>
+
 </head>
 
 <header>
@@ -60,3 +78,25 @@
 <%--    <input type="text" id="password" name="password">--%>
 <%--    <button type="submit">Log in</button>--%>
 <%--</form>--%>
+
+<%--INSTRUCTOR EXAMPLE--%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
