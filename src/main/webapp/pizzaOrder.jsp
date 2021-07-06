@@ -46,6 +46,7 @@
             <option value="buffalo">Buffalo</option>
         </select>
     </div>
+
     <p>Select your toppings</p>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" value="cheese" id="cheese" name="topping">
@@ -66,21 +67,11 @@
         </label>
     </div>
 
-
-
     <div class="form-group">
         <label for="address">Enter Your Address</label>
         <textarea class="form-control" id="address" name="address" rows="3"></textarea>
     </div>
-
-
-
     <button type="submit">Submit pizza order</button>
-
-
 </form>
-
-
-
 </body>
 </html>
