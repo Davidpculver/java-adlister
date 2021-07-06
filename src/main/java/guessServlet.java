@@ -24,18 +24,18 @@ public class guessServlet extends HttpServlet {
         if (userguess < 1 || userguess > 3) {
             resp.sendRedirect("/guess");
         } else if (userguess == randomNum) {
-//            req.getRequestDispatcher("/correct").forward(req, resp);
+            req.getRequestDispatcher("/correct").forward(req, resp);
 //            RequestDispatcher dispatcher =
 //                    getServletContext().getRequestDispatcher("/correct");
 //            dispatcher.forward(req, resp);
 //            req.getRequestDispatcher("/correct").forward(req, resp);
 //            String result = "You Won!";
 //            resp.getWriter().println("<h1>You won!</h1>");
-            resp.sendRedirect("/correct");
+//            resp.sendRedirect("/correct");
 
         } else {
-            resp.sendRedirect("/incorrect");
-//            req.getRequestDispatcher("/incorrect").forward(req, resp);
+//            resp.sendRedirect("/incorrect");
+            req.getRequestDispatcher("/incorrect").forward(req, resp);
         }
 
     }

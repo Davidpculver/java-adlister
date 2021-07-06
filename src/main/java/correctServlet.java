@@ -12,9 +12,10 @@ public class correctServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        Couldnt get below to work, had to use getwriter... why??
 
-//        String result = "You Won!";
+        String result = "You Won!";
+        System.out.println(result);
 ////        resp.sendRedirect("/viewResult.jsp");
-//        req.getRequestDispatcher("/viewResult.jsp").forward(req, resp);
-        resp.getWriter().println("<h1>You won!</h1>");
+        req.getRequestDispatcher("/viewResult.jsp").forward(req, resp);
+//        resp.getWriter().println("<h1>You won!</h1>");
     }
 }

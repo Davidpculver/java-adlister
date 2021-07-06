@@ -8,7 +8,7 @@
 <body>
 
 <%--Couldnt get below to work. Had to use a printwriter. Why?--%>
-<%--<h1>${result}</h1>--%>
+<h1>${result}</h1>
 
 </body>
 </html>

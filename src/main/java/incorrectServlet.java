@@ -10,9 +10,10 @@ public class incorrectServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String result = "You Lose!";
-//        req.getRequestDispatcher("/viewResult.jsp").forward(req, resp);
+        String result = "You Lose!";
+        System.out.println(result);
+        req.getRequestDispatcher("/viewResult.jsp").forward(req, resp);
 
-        resp.getWriter().println("<h1>You lose!</h1>");
+//        resp.getWriter().println("<h1>You lose!</h1>");
     }
 }
