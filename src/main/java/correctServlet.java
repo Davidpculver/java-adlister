@@ -10,6 +10,8 @@ public class correctServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        Couldnt get below to work, had to use getwriter... why??
+
 //        String result = "You Won!";
 ////        resp.sendRedirect("/viewResult.jsp");
 //        req.getRequestDispatcher("/viewResult.jsp").forward(req, resp);
