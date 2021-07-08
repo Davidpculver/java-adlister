@@ -10,7 +10,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null){
-            response.sendRedirect("/profile.jsp");
+            response.sendRedirect("/profile");
             return;
         }
 
@@ -22,12 +22,14 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         boolean validAttempt = username.equals("admin") && password.equals("password");
+        boolean isLoggedIn = username.equals("dc") && password.equals("catch22");
 
         HttpSession session = request.getSession();
 
-        session.setAttribute("username", username);
-        if (validAttempt) {
-            session.setAttribute("user", true);
+//        session.setAttribute("username", username);
+
+        if (isLoggedIn) {
+            session.setAttribute("user", username);
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");

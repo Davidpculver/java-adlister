@@ -9,7 +9,10 @@
     <jsp:include page="partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome ${username}! You are logged in.</h1>
+<%--        <h1>Welcome ${user}! You are logged in.</h1>--%>
+
+<%--        Instructor below: sessionscope access to entire session object--%>
+        <h1>Welcome, ${sessionScope.user}</h1>
     </div>
 
 </body>

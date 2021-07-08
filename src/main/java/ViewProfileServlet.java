@@ -10,9 +10,16 @@ import java.io.IOException;
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
+//        HttpSession session = request.getSession();
 
-        if (session.getAttribute("user") == null || (Boolean) session.getAttribute("user") == false){
+//        if (session.getAttribute("user") == null){
+//            response.sendRedirect("/login");
+//            return;
+//        }
+
+//        INSTRUCTOR example below. Did not need to create a session variable
+        // if user attribute is null it means they have not logged in yet.
+        if (request.getSession().getAttribute("user") == null){
             response.sendRedirect("/login");
             return;
         }
