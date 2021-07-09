@@ -1,8 +1,8 @@
 use adlister_db;
-
+DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE users
+CREATE TABLE IF NOT EXISTS users
 
 (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -13,15 +13,19 @@ CREATE TABLE users
 );
 
 
-DROP TABLE IF EXISTS ads;
 
-CREATE TABLE ads
 
+CREATE TABLE IF NOT EXISTS ads
 (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    title VARCHAR(100) NOT NULL,
+
+
+    id          INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    user_id     INT UNSIGNED NOT NULL,
+    title       VARCHAR(100) NOT NULL,
     description VARCHAR(500) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
+        ON DELETE CASCADE
 );
+
+INSERT INTO users (username, email, password) VALUES ('user1', 'user@email.com', 'password');
