@@ -2,7 +2,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
+        <jsp:param name="title" value="Register for our site" />
     </jsp:include>
 </head>
 <body>
@@ -23,6 +23,10 @@
         <div class="form-group">
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password">
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input id="confirm_password" name="confirm_password" class="form-control" type="password">
         </div>
         <input type="submit" class="btn btn-primary btn-block" value="Log In">
     </form>
