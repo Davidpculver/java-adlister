@@ -15,7 +15,7 @@ import java.util.List;
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("username") != null) {
+        if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
             return;
         }
@@ -33,20 +33,28 @@ public class LoginServlet extends HttpServlet {
         // TODO: make sure we find a user with that username
         // TODO: check the submitted password against what you have in your database
 
+
+
         User foundUser = DaoFactory.getUsersDao().findByUsername(username);
-        request.getSession().setAttribute("username", foundUser.getUsername());
-//        request.getRequestDispatcher("WEB-INF/profile").forward(request, response);
-        response.sendRedirect("/profile");
+        if (foundUser ==  null){
+            response.sendRedirect("/login");
+        }
 
 
-//        boolean validAttempt = false;
-//
-//        if (validAttempt) {
-//            // TODO: store the logged in user object in the session, instead of just the username
-//            request.getSession().setAttribute("username", username);
-//            response.sendRedirect("/profile");
-//        } else {
-//            response.sendRedirect("/login");
-//        }
+
+//        request.getSession().setAttribute("username", foundUser.getUsername());
+////        request.getRequestDispatcher("WEB-INF/profile").forward(request, response);
+//        response.sendRedirect("/profile");
+
+
+        boolean validAttempt = password.equals(foundUser.getPassword());
+
+        if (validAttempt) {
+            // TODO: store the logged in user object in the session, instead of just the username
+            request.getSession().setAttribute("user", foundUser);
+            response.sendRedirect("/profile");
+        } else {
+            response.sendRedirect("/login");
+        }
     }
 }

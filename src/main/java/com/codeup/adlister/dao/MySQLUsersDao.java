@@ -26,14 +26,12 @@ public class MySQLUsersDao implements Users{
 
     private User extractUser(ResultSet rs) throws SQLException {
         System.out.println("Extracting user");
-        User user1 = new User(
+        return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("email"),
                 rs.getString("password")
         );
-        System.out.println("User1" + user1);
-        return user1;
     }
 
 //    private List<User> usersByUsername(ResultSet rs) throws SQLException {
